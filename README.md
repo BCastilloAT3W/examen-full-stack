@@ -51,5 +51,3 @@
 - Qué es tailwind.
 
 - Qué son los server / client components.
-
-# Ejemplos de código
