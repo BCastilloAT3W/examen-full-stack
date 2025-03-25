@@ -3,10 +3,6 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { faker } from '@faker-js/faker';
 
-async function wait(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 const schema = z.object({
   limit: z.string().transform((val) => parseInt(val, 10)),
 });
@@ -27,3 +23,8 @@ function getCompanies(nCompanies: number) {
 
   return Array.from({ length: nCompanies }, () => faker.company.name());
 }
+
+async function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
