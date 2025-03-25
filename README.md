@@ -4,8 +4,6 @@
 
 - Problemas complejos que has resuelto.
 
-- Conoces algún otro lenguaje de programación.
-
 - Cuál es tu formación académica.
 
 - Cuál es tu nivel de inglés.
@@ -25,8 +23,6 @@
 - Qué es un garbage collector.
 
 - Data structures: static array, graph, tree.
-
-- Algorithms: binary search.
 
 ## Javascript en servidor y cliente
 

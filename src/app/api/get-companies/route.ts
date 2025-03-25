@@ -1,7 +1,7 @@
-import { db } from "@/server/db";
 import { z } from "zod";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
+import { faker } from '@faker-js/faker';
 
 async function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -19,13 +19,11 @@ export async function GET(req: NextRequest) {
   const timeToWait = Math.floor(Math.random() * 2000);
   await wait(timeToWait);
 
-  const response = await db.query.company.findMany({
-    columns: {
-      name: true,
-    },
-    orderBy: (table, { desc }) => desc(table.companyId),
-    limit: limit,
-  });
+  return NextResponse.json(getCompanies(limit));
+}
 
-  return NextResponse.json(response.map((company) => company.name));
+function getCompanies(nCompanies: number) {
+  faker.seed(123);
+
+  return Array.from({ length: nCompanies }, () => faker.company.name());
 }

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.6.0",
     "@hookform/resolvers": "^3.9.0",
     "@lucide/lab": "^0.1.2",
     "@radix-ui/react-accordion": "^1.2.0",
@@ -58,7 +59,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.4.1",
     "@types/eslint": "^8.56.10",
     "@types/lodash": "^4.17.10",
     "@types/node": "^20.14.10",
