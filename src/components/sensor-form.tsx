@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { getErrorMessage } from "@/lib/utils";
+import { toast } from "sonner";
 
 const sensorSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -30,6 +31,7 @@ export function SensorForm() {
       await saveNewSensor(newSensor);
       // Reset form after successful submission
       form.reset();
+      toast.success("Sensor created successfully");
     },
     validators: {
       onSubmit: sensorSchema,
@@ -40,6 +42,7 @@ export function SensorForm() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
+        e.stopPropagation();
         form.handleSubmit();
       }}
       className="w-full max-w-md space-y-4"

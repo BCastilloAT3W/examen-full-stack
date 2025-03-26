@@ -14,6 +14,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "./ui/alert-dialog";
+import { toast } from "sonner";
 
 export default function SensorDisplay({ sensor }: { sensor: Sensor }) {
   return (
@@ -38,6 +39,7 @@ export default function SensorDisplay({ sensor }: { sensor: Sensor }) {
             <AlertDialogAction
               onClick={async () => {
                 await deleteSensor(sensor.id);
+                toast.success("Sensor deleted successfully");
               }}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
