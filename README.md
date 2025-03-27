@@ -1,23 +1,21 @@
-# Ejercicio 1
+# Exercise 1
 
-## Enunciado
+## Description
 
-Esta página muestra nombres de empresas. Cada vez que clicamos en _Fetch more_ se añade un nombre más a la lista de empresas.
+This page displays company names. Each time we click on _Fetch more_, a new name is added to the list of companies.
 
-**Pero hay un problema**: el _endpoint_ que se utiliza para obtener los nombres de las empresas es muy lento, por lo que si clicamos muy rápido en _Fetch more_ la página puede acabar
-mostrándo una lista con menos empresas de las que realmente se han solicitado.
+**But there's a problem**: the _endpoint_ used to fetch company names is very slow, so if we click _Fetch more_ too quickly, the page might end up showing fewer companies than were actually requested.
 
 ![Example of the application showing a list of company names and a Fetch more button](./.github/images/screenshot.png)
 
-Tu tarea es modificar el código de la página para que, si el usuario clicase en _Fetch more_ mientras la página está esperando a que la API responda, la petición anterior se cancele y se muestren los nombres de las empresas que se han solicitado en la última petición. También, mientras se espera a que la API responda, el botón _Fetch more_ debe cambiar a _Cancel_. Si clicas en _Cancel_ la petición se cancela.
+Your task is to modify the page code so that, if the user clicks _Fetch more_ while the page is waiting for the API to respond, the previous request is cancelled and only the company names from the most recent request are displayed. Also, while waiting for the API to respond, the _Fetch more_ button should change to _Cancel_. If you click _Cancel_, the request is cancelled.
 
-## Notas
+## Notes
 
-No debes modificar el código del endpoint que se utiliza para obtener los nombres de las empresas. Aunque tienes acceso a este código, puedes asumir que
-este es un servicio externo del que no tienes control. La API de este servicio es la siguiente:
+You should not modify the code of the endpoint used to fetch company names. Although you have access to this code, you can assume that this is an external service over which you have no control. The API of this service is as follows:
 
 ```
 GET /api/get-companies?limit=N
 ```
 
-Donde `N` es el número de empresas que se quieren obtener. La respuesta es un array de strings con los nombres de las empresas.
+Where `N` is the number of companies to retrieve. The response is an array of strings containing the company names.
