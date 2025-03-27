@@ -8,7 +8,11 @@ This page displays company names. Each time we click on _Fetch more_, a new name
 
 ![Example of the application showing a list of company names and a Fetch more button](./.github/images/screenshot.png)
 
-Your task is to modify the page code so that, if the user clicks _Fetch more_ while the page is waiting for the API to respond, the previous request is cancelled and only the company names from the most recent request are displayed. Also, while waiting for the API to respond, the _Fetch more_ button should change to _Cancel_. If you click _Cancel_, the request is cancelled.
+Your task is to modify the page code so that, if the user clicks _Fetch more_ while the page is waiting for the API to respond, the previous request is cancelled and only the company names from the most recent request are displayed.
+
+## Bonus
+
+While waiting for the API to respond, the _Fetch more_ button should change to _Cancel_. If you click _Cancel_, the request is cancelled.
 
 ## Notes
 
